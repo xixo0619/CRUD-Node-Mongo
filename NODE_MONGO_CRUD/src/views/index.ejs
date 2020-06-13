@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <a href="/" class="navbar-brand">CRUD MONGO</a>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <!--Formulario-->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="title" placeholder="Inserte algo" class="form-control">
+                            </div>
+
+                            <div>
+                                <textarea name="description" cols="80" class="form-control mb-4" placeholder="Description" ></textarea>
+
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary btn block">Agregar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!--Lista-->
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nº</th>
+                            <th>Titulo</th>
+                            <th>Description</th>
+                            <th>Operacion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for( let index = 0; index < tasks.length; index++ 1 { %>
+                            <tr>
+                                <td><%= index + 1 %> </td>
+                                <td><%= tasks[index].titulo%> </td>
+                                <td><%= tasks[index].description %> </td>
+                                <td>
+                                    <a href="" class="btn btn-dark">DONE</a>
+                                    <a href="" class="btn btn-danger">Eliminar</a>
+                                    <a href="" class="btn btn-info"></a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+   
+</body>
+</html>
